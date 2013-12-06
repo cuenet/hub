@@ -23,16 +23,16 @@ import java.util.logging.Logger;
 import java.net.*;
 import java.io.*;
 
-public class TCPComm implements Runnable{
+public class TCPComm implements Runnable {
     public void run() {
         int portNumber = 2647;
         boolean listening = true;
         
         try (ServerSocket serverSocket = new ServerSocket(portNumber)) { 
             while (listening) {
-	            new TCPCommClients(serverSocket.accept()).start();
-	        }
-	    } catch (IOException e) {
+	        new TCPCommClients(serverSocket.accept()).start();
+	    }
+	} catch (IOException e) {
             System.err.println("Could not listen on port " + portNumber);
             System.exit(-1);
         }
