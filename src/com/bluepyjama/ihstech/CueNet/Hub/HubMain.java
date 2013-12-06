@@ -14,6 +14,7 @@ public class HubMain {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Thread TCP = new Thread(new TCPComm());
+        TCP.start();
     }
 }
